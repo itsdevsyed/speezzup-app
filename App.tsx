@@ -17,9 +17,6 @@ export default function App() {
       <SafeAreaView className="flex-1 bg-background">
         <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
         <LoginPage />
-
-        
-        
       </SafeAreaView>
     </NavigationContainer>
   );
