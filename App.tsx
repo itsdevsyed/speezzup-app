@@ -1,12 +1,15 @@
+import React from "react";
+import { SafeAreaView } from 'react-native-safe-area-context';
+import LoginPage from "./src/screens/customer/LoginScreen";
 import "./global.css"
-import { Text, View } from "react-native";
+import Card from "./src/components/Card";
 
-export default function App() {
+const App = () => {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-xl font-bold text-blue-500">
-        Welcome to Nativewind!
-      </Text>
-    </View>
+    <SafeAreaView className="flex-1">
+      <LoginPage />
+    </SafeAreaView>
   );
-}
+};
+
+export default App;
