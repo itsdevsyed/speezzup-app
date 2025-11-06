@@ -1,4 +1,4 @@
-package com.spezzup
+package com.syed42u.spezzup
 
 import android.os.Build
 import android.os.Bundle

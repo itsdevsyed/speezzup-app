@@ -1,15 +1,26 @@
 import React from "react";
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { NavigationContainer } from "@react-navigation/native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useColorScheme } from "nativewind";
+import { NAV_THEME } from "./src/theme/index";
 import LoginPage from "./src/screens/customer/LoginScreen";
-import "./global.css"
-import Card from "./src/components/Card";
+import "./global.css";
+import { StatusBar } from "expo-status-bar";
 
-const App = () => {
+export default function App() {
+  const { colorScheme } = useColorScheme();
+
   return (
-    <SafeAreaView className="flex-1">
-      <LoginPage />
-    </SafeAreaView>
-  );
-};
+    <NavigationContainer
+      theme={colorScheme === "dark" ? NAV_THEME.dark : NAV_THEME.light}
+    >
+      <SafeAreaView className="flex-1 bg-background">
+        <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
+        <LoginPage />
 
-export default App;
+        
+        
+      </SafeAreaView>
+    </NavigationContainer>
+  );
+}

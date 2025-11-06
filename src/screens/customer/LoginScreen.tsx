@@ -1,45 +1,34 @@
-import React, { useState } from "react";
-import { View, Text } from "react-native";
-import Input from "../../components/Input";
-import Button from "../../components/Button";
-import Card from "@/src/components/Card";
+import ThemeToggle from "@components/ThemeToggle";
+import React from "react";
+import { Text, TextInput, TouchableOpacity, View } from "react-native";
 
-const LoginPage = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    const handleLogin = () => {
-        console.log("Login clicked:", { email, password });
-    };
-
+export default function LoginScreen() {
     return (
-        <View className="flex-1 bg-white justify-center px-6">
-            <Text className="text-3xl font-bold text-center mb-8 text-gray-800">
-                Login
+        <View className="flex-1 items-center justify-center bg-background px-6">
+            <Text className="text-2xl font-bold text-foreground mb-6">
+                Welcome Back 👋
             </Text>
 
-            <Input
+            <TextInput
                 placeholder="Email"
-                value={email}
-                onChangeText={setEmail}
-                className="mb-4"
+                placeholderTextColor="#888"
+                className="w-full border border-gray-400 rounded-lg px-4 py-3 mb-3 text-foreground bg-card"
             />
-            <Input
+
+            <TextInput
                 placeholder="Password"
-                value={password}
+                placeholderTextColor="#888"
                 secureTextEntry
-                onChangeText={setPassword}
-                className="mb-6"
+                className="w-full border border-gray-400 rounded-lg px-4 py-3 mb-6 text-foreground bg-card"
             />
 
-            <Button title="Login" onPress={handleLogin} />
+            <TouchableOpacity className="w-full bg-primary py-3 rounded-xl">
+                <Text className="text-center text-white font-semibold">Login</Text>
+            </TouchableOpacity>
 
-
-
-
-            <Card title="demo" ></Card>
+            <View className="mt-8">
+                <ThemeToggle />
+            </View>
         </View>
     );
-};
-
-export default LoginPage;
+}

@@ -19,12 +19,18 @@
       "react",
       "react-native"
     ],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
+      "baseUrl": ".",
+      "paths": {
+        "@/*": [
+          "./*"
+        ],
+        "@components/*": [
+          "./src/components/*"
+        ],
+                "@/*": [
+                  "./src/*"
+                ]
+      }
   },
   "include": [
     "**/*.ts",

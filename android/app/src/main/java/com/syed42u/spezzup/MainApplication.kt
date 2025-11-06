@@ -1,4 +1,4 @@
-package com.spezzup
+package com.syed42u.spezzup
 
 import android.app.Application
 import android.content.res.Configuration
